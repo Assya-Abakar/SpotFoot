@@ -1,51 +1,71 @@
 .custom-footer {
-  background: rgba(10, 18, 28, 0.65);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(255,255,255,0.05);
+  background: rgba(var(--ion-background-color-rgb, 10, 18, 28), 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  contain: none; 
+  overflow: visible;
 }
 
 .nav {
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  padding: 10px 0 14px;
-}
+  align-items: flex-end; 
+  padding: 8px 0 calc(8px + env(safe-area-inset-bottom)); 
 
-.nav-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 11px;
-  color: rgba(255,255,255,0.6);
-  gap: 4px;
-  transition: 0.2s ease;
-}
+  &-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--app-nav-inactive-color, #8e8e93);
+    transition: transform 0.2s ease, color 0.2s ease;
 
-.nav-item ion-icon {
-  font-size: 22px;
-}
+    ion-icon {
+      font-size: 24px;
+      transition: 0.2s;
+    }
 
-.nav-item.active {
-  color: #22c55e;
-}
+    &.active {
+      color: var(--ion-color-primary, #22c55e);
+      
+      ion-icon {
+        transform: translateY(-2px); 
+      }
+    }
 
-.center {
-  transform: translateY(-12px);
-}
+    &.center {
+      transform: translateY(-16px);
+      overflow: visible;
 
-.create-btn {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 20px rgba(34,197,94,0.4);
-}
+      .create-btn {
+     width: 56px; 
+     height: 56px;
+     border-radius: 50%;
+     background: var(--ion-color-primary);
+     display: flex;
+     align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(34,197,94,0.4);
 
-.create-btn ion-icon {
-  font-size: 26px;
-  color: #04110b;
+        ion-icon {
+          font-size: 30px;
+          color: var(--ion-color-primary-contrast, #fff);
+          transform: none;
+        }
+
+        &:active {
+          transform: scale(0.9); 
+        }
+      }
+      
+      span {
+        margin-top: 4px;
+      }
+    }
+  }
 }

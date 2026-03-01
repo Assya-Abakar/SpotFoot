@@ -21,7 +21,6 @@ ion-toolbar {
   position: relative;
 }
 
-/* Ligne haute */
 .top-bar {
   display: flex;
   justify-content: center;
@@ -37,7 +36,7 @@ ion-toolbar {
 }
 
 .logo span {
-  color: #22c55e;
+  color: var(--ion-color-primary);
 }
 
 .icons {
