@@ -5,7 +5,11 @@ ion-content.app-bg {
 
 ion-content.app-bg::part(background) {
   background: 
-    radial-gradient(90% 55% at 50% 0%, rgba(34,197,94,0.22) 0%, rgba(0,0,0,0) 60%),
+    radial-gradient(
+      80% 60% at 50% 0%,
+      rgba(var(--ion-color-primary-rgb), 0.25) 0%, /* Utilise le RGB de ta variable */
+      rgba(0,0,0,0) 70%
+    ),
     linear-gradient(180deg, #0f1f1a 0%, #0b1220 55%, #070b12 100%);
   background-attachment: fixed; 
 }
