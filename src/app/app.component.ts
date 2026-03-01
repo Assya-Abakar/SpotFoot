@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonApp, IonRouterOutlet,
          IonHeader, IonContent, IonToolbar, IonTitle, IonButtons, IonButton, IonIcon} from '@ionic/angular/standalone';
 import { AppHeaderComponent } from './shared/components/app-header/app-header.component';
+import { FooterComponent } from './shared/components/app-footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ import { AppHeaderComponent } from './shared/components/app-header/app-header.co
             IonRouterOutlet, 
             IonContent,
             IonHeader,
-            AppHeaderComponent],
+            AppHeaderComponent,
+            FooterComponent],
   styleUrl: 'app.component.scss',
 })
 export class AppComponent {

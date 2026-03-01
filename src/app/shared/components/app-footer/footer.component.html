@@ -1,0 +1,21 @@
+<ion-footer class="custom-footer ion-no-border">
+  <div class="nav">
+
+    <div *ngFor="let tab of tabs" 
+      class="nav-item" 
+      (click)="go(tab.id)"
+      aria-label="{{ tab.aria_label }}"
+      [class.active]="isActive(tab.id)"
+      [class.center]="tab.isSpecial"> 
+      <ng-container *ngIf="tab.isSpecial; else standardIcon">
+       <div class="create-btn">
+      <ion-icon [name]="tab.icon"></ion-icon>
+       </div>
+    </ng-container>
+  <ng-template #standardIcon>
+    <ion-icon [name]="tab.icon"></ion-icon>
+  </ng-template>
+    <span>{{ tab.label }}</span>
+  </div>
+  </div>
+</ion-footer>
