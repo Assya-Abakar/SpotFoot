@@ -22,4 +22,8 @@ export class SupabaseService {
   get currentUser() {
     return this.supabase.auth.getUser();
   }
+  
+  async signOut() {
+    await this.supabase.auth.signOut();
+  }
 }
