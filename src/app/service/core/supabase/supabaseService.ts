@@ -19,10 +19,13 @@ export class SupabaseService {
     return this.supabase;
   }
 
-  get currentUser() {
-    return this.supabase.auth.getUser();
+  async getCurrentUser() : Promise<any> {
+    const { data, error } = await this.supabase.auth.getUser();
+    if (error) throw error;
+    return data.user;
   }
-  
+
+
   async signOut() {
     await this.supabase.auth.signOut();
   }
