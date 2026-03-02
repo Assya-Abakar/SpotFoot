@@ -1,14 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { IonIcon,  IonList,IonCard, IonTabs, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonButton, IonFab, IonFabButton, IonProgressBar, IonBadge } from '@ionic/angular/standalone';
+import { IonIcon,  IonList,IonCard, IonTabs, IonCardHeader, IonCardTitle, IonCardSubtitle,IonContent, IonCardContent, IonButton, IonFab, IonFabButton, IonProgressBar, IonBadge, IonHeader, IonFooter } from '@ionic/angular/standalone';
 import { SupabaseService } from '../../service/core/supabase/supabaseService';
 import { CommonModule } from '@angular/common';
+import { MatchCardComponent } from 'src/app/shared/components/match-card/match-card.component';
+import { FooterComponent } from 'src/app/shared/components/app-footer/footer.component';
+import { AppHeaderComponent } from 'src/app/shared/components/app-header/app-header.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [],
+  imports: [MatchCardComponent,AppHeaderComponent, FooterComponent, 
+            IonCardHeader, IonHeader, IonFooter, IonIcon,  IonList,IonCard, IonContent,
+            IonTabs, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonButton, IonFab, IonFabButton, IonProgressBar, IonBadge, CommonModule],
 })
 export class HomePage implements OnInit {
   matches: any[] = []; // Typé plus tard
