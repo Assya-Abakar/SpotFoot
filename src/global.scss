@@ -1,68 +1,126 @@
-/*
- * App Global CSS
- * ----------------------------------------------------------------------------
- * Put style rules here that you want to apply globally. These styles are for
- * the entire app and not just one component. Additionally, this file can be
- * used as an entry point to import other CSS/Sass files to be included in the
- * output CSS.
- * For more information on global stylesheets, visit the documentation:
- * https://ionicframework.com/docs/layout/global-stylesheets
- */
+/* ------ IONIC CORE IMPORTS ---------*/
 
-/* Core CSS required for Ionic components to work properly */
+/* Core CSS required for Ionic components */
 @import "@ionic/angular/css/core.css";
 
-/* Basic CSS for apps built with Ionic */
+/* Basic Ionic CSS */
 @import "@ionic/angular/css/normalize.css";
 @import "@ionic/angular/css/structure.css";
 @import "@ionic/angular/css/typography.css";
 @import "@ionic/angular/css/display.css";
 
-/* Optional CSS utils that can be commented out */
+/* Optional utilities */
 @import "@ionic/angular/css/padding.css";
 @import "@ionic/angular/css/float-elements.css";
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-/**
- * Ionic Dark Mode
- * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
- */
+/* Dark mode auto */
+@import "@ionic/angular/css/palettes/dark.system.css";
 
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
+
+/* ------------------------ THEME VARIABLES ------------------*/
+
+:root {
+
+  /* ===== BRAND COLORS ===== */
+
+  --ion-color-primary: #22c55e;
+  --ion-color-primary-rgb: 34, 197, 94;
+  --ion-color-primary-contrast: #04110b;
+  --ion-color-primary-shade: #16a34a;
+  --ion-color-primary-tint: #4ade80;
+
+  --ion-color-secondary: #64748b;
+  --ion-color-secondary-contrast: #ffffff;
+
+  /* ===== DARK BACKGROUND ===== */
+
+  --ion-background-color: #0b1220;
+  --ion-background-color-rgb: 11, 18, 32;
+  --ion-text-color: #f9fafb;
+  --ion-border-color: rgba(255, 255, 255, 0.08);
+
+  /* ===== APP SURFACES ===== */
+
+  --app-card-background: rgba(17, 24, 39, 0.75);
+  --app-card-border: rgba(255, 255, 255, 0.06);
+
+  --app-glass-background: rgba(10, 18, 28, 0.65);
+  --app-glass-border: rgba(255, 255, 255, 0.05);
+
+  /* ===== MATCH STATES ===== */
+
+  --match-open: #22c55e;
+  --match-almost: #f97316;
+  --match-full: #ef4444;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+|  GLOBAL BACKGROUND (Premium Dark + Halo)
+|--------------------------------------------------------------------------
+*/
+
+ion-content.app-bg {
+  --background: transparent;
+}
+
+ion-content.app-bg::part(background) {
+  background:
+    /* Halo vert subtil */
+    radial-gradient(
+      80% 50% at 50% 0%,
+      rgba(var(--ion-color-primary-rgb), 0.25) 0%,
+      rgba(0,0,0,0) 60%
+    ),
+
+    /* Overlay sombre pour lisibilité */
+    linear-gradient(
+      180deg,
+      rgba(11, 18, 32, 0.7) 0%,
+      rgba(11, 18, 32, 0.85) 55%,
+      rgba(7, 11, 18, 1) 100%
+    ),
+
+    url('/assets/bg/pitch.png');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+/* ---------- HEADER HALO EFFECT ------------------------ */
+
+.custom-header {
+  position: relative;
+}
 
 .custom-header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(
-      80% 60% at 50% 0%,
-      rgba(34,197,94,0.25) 0%,
-      rgba(0,0,0,0) 70%
-    );
+  background: radial-gradient(
+    80% 60% at 50% 0%,
+    rgba(34, 197, 94, 0.25) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
   pointer-events: none;
   z-index: -1;
 }
 
 
-:root {
-  --app-header-offset: 92px;  /* ajuste */
-  --app-footer-offset: 72px;  /* ajuste */
-}
+/*
+|--------------------------------------------------------------------------
+|  GLOBAL FIXES
+|--------------------------------------------------------------------------
+*/
 
-.app-shell {
-  padding: 16px;
-  padding-top: calc(var(--app-header-offset) + env(safe-area-inset-top));
-  padding-bottom: calc(var(--app-footer-offset) + env(safe-area-inset-bottom));
+/* Hide scrollbars mobile */
+::-webkit-scrollbar {
+  display: none;
 }
-ion-router-outlet + ion-content,
-ion-router-outlet ion-content {
-  padding-top: calc(var(--app-header-offset) + env(safe-area-inset-top)) !important;
-}
-

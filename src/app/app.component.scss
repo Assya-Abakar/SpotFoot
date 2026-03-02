@@ -13,8 +13,3 @@ ion-content.app-bg::part(background) {
     linear-gradient(180deg, #0f1f1a 0%, #0b1220 55%, #070b12 100%);
   background-attachment: fixed; 
 }
-
-ion-router-outlet.ion-page ion-content {
-  padding-top: calc(var(--app-header-offset,) + env(safe-area-inset-top)) !important;
-  --offset-top: calc(var(--app-header-offset, 92px) + 16px);
-}
