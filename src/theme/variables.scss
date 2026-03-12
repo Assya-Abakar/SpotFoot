@@ -1,8 +1,5 @@
 :root {
-
-  /* =========================
-     🎨 COULEURS PRINCIPALES
-  ========================== */
+  /* ------ COULEURS PRINCIPALES ----- */
 
   --ion-color-primary: #22c55e;
   --ion-color-primary-rgb: 34, 197, 94;
@@ -14,9 +11,7 @@
   --ion-color-secondary-rgb: 100, 116, 139;
   --ion-color-secondary-contrast: #ffffff;
 
-  /* =========================
-     🌑 THEME DARK GLOBAL
-  ========================== */
+  /* -------- THEME DARK GLOBAL -------- */
 
   --ion-background-color: #0b1220;
   --ion-background-color-rgb: 11, 18, 32;
@@ -26,9 +21,7 @@
 
   --ion-border-color: rgba(255, 255, 255, 0.08);
 
-  /* =========================
-     🧊 CARDS & SURFACES
-  ========================== */
+  /*  ------ SURFACES APP ------- */
 
   --app-card-background: rgba(17, 24, 39, 0.75);
   --app-card-border: rgba(255, 255, 255, 0.06);
@@ -36,17 +29,13 @@
   --app-glass-background: rgba(10, 18, 28, 0.65);
   --app-glass-border: rgba(255, 255, 255, 0.05);
 
-  /* =========================
-     🧭 NAVIGATION
-  ========================== */
+  /* --------  NAVIGATION -------- */
 
   --app-nav-background: var(--app-glass-background);
   --app-nav-active-color: var(--ion-color-primary);
   --app-nav-inactive-color: rgba(255, 255, 255, 0.5);
 
-  /* =========================
-     🟢 MATCH STATES
-  ========================== */
+  /* ------- ETAT DES MATCHS ----- */
 
   --match-open: #22c55e;
   --match-almost: #f97316;

@@ -1,47 +1,53 @@
-/* ===== HEADER GLASS PREMIUM ===== */
+/* ----- HEADER GLASS ----- */
 .custom-header {
   position: relative;
   padding: 12px 16px 10px 16px;
 
-  background: rgba(10, 18, 28, 0.55);
-  border-bottom: 1px solid var(--app-glass-border, rgba(255,255,255,0.05));
+  background: var(--app-glass-background);
+  border-bottom: 1px solid var(--app-glass-border);
 
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      80% 60% at 50% 0%,
+      rgba(var(--ion-color-primary-rgb), 0.15) 0%, // Plus subtil pour pas écraser le logo
+      rgba(0, 0, 0, 0) 70%
+    );
+    pointer-events: none;
+    z-index: -1;
+  }
 }
 
 
-/* Ligne 1 */
+/* ---- Ligne 1 (Logo & Icônes) -------- */
 .top-bar {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   min-height: 34px;
-}
+  .logo {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: var(--ion-text-color);
 
-.logo {
-  font-size: 22px;
-  font-weight: 900;
-  letter-spacing: 1px;
-  color: #f9fafb;
-}
-
-.logo span {
-  color: var(--ion-color-primary);
-}
-
-.icons {
+      span {
+        color: var(--ion-color-primary);
+      }
+    }
+    .icons {
   position: absolute;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
 }
-
-/* Boutons header */
-.custom-header ion-button {
-  --color: rgba(249, 250, 251, 0.82);
 }
+
 
 /* Ligne 2 */
 .sub-bar {
@@ -49,9 +55,7 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 8px;
-}
-
-.city {
+  .city {
   font-size: 20px;
   font-weight: 800;
   color: #f9fafb;
@@ -62,8 +66,14 @@
   align-items: center;
   gap: 6px;
 }
+}
 
-/* Bouton "Carte" en mode chip */
+
+/* Boutons & Chips */
+ion-button {
+  --color:rgba(var(--ion-text-color-rgb), 0.85);;
+}
+
 .chip-btn {
   --background: rgba(255, 255, 255, 0.06);
   --border-radius: 12px;
