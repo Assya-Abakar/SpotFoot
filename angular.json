@@ -22,6 +22,9 @@
               "base": "www",
               "browser": ""
             },
+            "stylePreprocessorOptions": {
+            "includePaths": ["node_modules"]
+            },
             "index": "src/index.html",
             "polyfills": [
               "src/polyfills.ts"
